@@ -1,0 +1,86 @@
+:host {
+  header {
+    height: 100vh;
+  }
+
+  section {
+    min-height: 100vh;
+
+    &#about {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow-y: scroll;
+      height: 100vh;
+
+      .frame {
+        position: relative;
+        padding: 0 40px;
+        overflow: hidden;
+        aspect-ratio: 16/10;
+        border: 1px solid red;
+
+        .claim {
+          position: absolute;
+          width: calc(50% - (2* 40px));
+          top: 50%;
+          transform: translateY(-50%);
+          transition: all .3s .3s ease-out;
+
+          &.fade-out {
+            opacity: 0.1;
+          }
+        }
+
+        .wrapper {
+          position: relative;
+          width: 100%;
+          will-change: transform;
+
+          .content {
+            width: 50%;
+            margin-left: auto;
+
+            &:first-child {
+              margin-top: 300px;
+            }
+          }
+
+          #showreel {
+            position: absolute;
+            left: 50%;
+            bottom: 0;
+            width: calc(100% + 80px); // padding-left + padding-right
+            aspect-ratio: 16/10;
+            object-fit: cover;
+            transform: translate(-50%, calc(100% - 300px));
+          }
+        }
+      }
+    }
+
+    &#section-2 {
+      background-color: red;
+    }
+
+    &#section-3 {
+      background-color: peachpuff;
+    }
+
+    &#section-4 {
+      background-color: aquamarine;
+    }
+
+    &#section-5 {
+      background-color: gainsboro;
+    }
+
+    &#section-6 {
+      background-color: olivedrab;
+    }
+  }
+
+  footer {
+    height: 100vh;
+  }
+}
